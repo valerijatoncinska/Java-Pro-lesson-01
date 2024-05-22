@@ -5,6 +5,9 @@ import task01.MyThread01;
 public class Main {
 
     public static int counter = 0;
+    public static synchronized void increcement (){
+        counter++;
+    }
 
     public static void main(String[] args) {
         // есть счётчик, сначала он 0
@@ -17,7 +20,7 @@ public class Main {
         myThread2.start();
 
         for (int i = 0; i < 1000000; i++) {
-            counter++;
+            increcement();
         }
 
         try {
